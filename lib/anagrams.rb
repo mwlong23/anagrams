@@ -9,7 +9,33 @@ class EvaluateWord
     @second_phrase_array = @second_phrase.split(' ')
   end
 
+  def antigram?
+    # joins words of input and removes non-alpha characters and spaces
+    # returns an array of unique alpha characters
+    first_array = @first_phrase_array.join('').gsub(/[^a-zA-Z]/i, '').split('').uniq
 
+
+    # joins words of input and removes non-alpha characters and spaces
+    # returns an array of unique alpha characters
+    second_array = @second_phrase_array.join.gsub(/[^a-zA-Z]/i, '').split('').uniq
+
+    antigram_array = []
+
+    for i in 1..first_array.length do
+      second_array.each do |array_element|
+        if array_element.include?(first_array[i-1].to_s)
+          antigram_array.push(1)
+        else
+          antigram_array.push(0)
+        end
+      end
+    end
+    if antigram_array.reduce(:+) < 1
+      true
+    else
+      false
+    end
+  end
 
   def word?
     combined_inputs = @first_phrase_array +  @second_phrase_array

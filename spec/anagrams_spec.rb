@@ -20,6 +20,10 @@ describe('#Anagram_checker')  do
  compare_words = EvaluateWord.new("Tarawa", "A war at")
  expect(compare_words.word?()).to(eq(true))
  end
+ it("checks if two inputted words are antigrams") do
+  compare_words = EvaluateWord.new("xqapx", "vuv")
+  expect(compare_words.antigram?()).to(eq(true))
+ end
 
 
 end
