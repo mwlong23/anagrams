@@ -25,6 +25,9 @@ The application supports multiple word entries for both anagrams and antigrams.
 * _Next navigate to the lib folder and run the ruby file using the command '''ruby anagrams.rb''' to run the file._
 * enjoy!
 
+## specifications
+in: "tea" and "eat"
+out: These two words are anagrams
 
 
 ## Known Bugs
