@@ -73,18 +73,35 @@ class EvaluateWord
 end
 
 
-# loop do
-#   puts "Please enter your first word or phrase"
-#   first_entry = gets.chomp
-#   puts "Please enter your second word"
-#   second_entry = gets.chomp
-#
-#   word_entries = EvaluateWord.new(first_entry,second_entry)
-#   puts puts word_entries.word?()
-#   puts word_entries.anagram?
-#   puts "Press 'y' if you would like to play again, 'n' to quit"
-#   repeat = gets.chomp
-#   if repeat == 'n'
-#     break;
-#   end
-# end
+loop do
+  puts "Please enter your first word or phrase"
+  first_entry = gets.chomp
+  puts "\n"
+  puts "Please enter your second word"
+  second_entry = gets.chomp
+  puts "\n"
+  word_entries = EvaluateWord.new(first_entry,second_entry)
+
+  is_word = word_entries.word?()
+  is_anagram = word_entries.anagram?()
+  is_antigram = word_entries.antigram?()
+
+  if is_word == true
+    if is_antigram == true
+      puts "The pharase you entered is an antigram"
+    else
+    puts is_anagram
+    end
+  else
+    puts "Please enter a real word(must contain at least one vowell)."
+  end
+
+
+
+
+  puts "Type 'y' if you would like to play again, 'n' to quit followed by return"
+  repeat = gets.chomp
+  if repeat == 'n'
+    break;
+  end
+end
