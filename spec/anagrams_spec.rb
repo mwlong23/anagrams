@@ -9,11 +9,11 @@ describe('#Anagram_checker')  do
  end
  it("accounts for entries of different cases") do
    compare_words = EvaluateWord.new("Tea", "eAt")
-   expect(compare_words.anagram?()).to(eq("These words or phrases are anagrams of eachother but don't form a palindrome."))
+   expect(compare_words.anagram?()).to(eq("These words or phrases are anagrams of each other but don't form a palindrome."))
  end
  it("checks whether two words are palindromes") do
    compare_words = EvaluateWord.new("Tarawa", "A war at")
-   expect(compare_words.anagram?()).to(eq("These words or phrases are anagrams of eachother and form a palindrome."))
+   expect(compare_words.anagram?()).to(eq("These words or phrases are anagrams of each other and form a palindrome."))
 
  end
  it("checks to make sure every inputted word has at least one vowell") do
@@ -24,7 +24,7 @@ describe('#Anagram_checker')  do
   compare_words = EvaluateWord.new("xqapx", "vuv")
   expect(compare_words.antigram?()).to(eq(true))
  end
- it("checks if two inputted words are antigrams") do
+ it("checks if two inputted phrases are antigrams") do
   compare_words = EvaluateWord.new("xqapx ce", "vuv yo")
   expect(compare_words.antigram?()).to(eq(true))
  end

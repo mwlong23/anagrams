@@ -26,8 +26,26 @@ The application supports multiple word entries for both anagrams and antigrams.
 * enjoy!
 
 ## specifications
-in: "tea" and "eat"
-out: These two words are anagrams
+* _Return a notification if two words entered are anagrams _
+* _in: "Tarawa" & "A war at" _
+* _out: "These words or phrases are anagrams of each other and form a palindrome." _
+* _Handles cases that contain capital letters _
+* _in: "Tea" & "eAt" _
+* _out: "These words or phrases are anagrams of each other but don't form a palindrome." _
+* _Can check whether two words are palindromes _
+* _in: "Tarawa" & "A war at" _
+* _out: "These words or phrases are anagrams of each other and form a palindrome." _
+* _It will checks to make sure every inputted word has at least one vowell _
+* _in: "xpx"& "xx" _
+* _out:"Please enter a real word(must contain at least one vowell)." _
+* _It will check if two inputted words are antigrams _
+* _in: "xqapx" & "vuv" _
+* _out: The pharase you entered is an antigram_
+* _It will Check if two inputted phrases are antigrams _
+* _in: "xqapx ce" & "vuv yo" _
+* _out: The pharase you entered is an antigram _
+
+
 
 
 ## Known Bugs

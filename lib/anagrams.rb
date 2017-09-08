@@ -48,8 +48,6 @@ class EvaluateWord
        input_is_not_word.push(0)
       end
     end
-
-
     if input_is_not_word.reduce(:+) > 0
       false
     else
@@ -95,9 +93,6 @@ loop do
   else
     puts "Please enter a real word(must contain at least one vowell)."
   end
-
-
-
 
   puts "Type 'y' if you would like to play again, 'n' to quit followed by return"
   repeat = gets.chomp
