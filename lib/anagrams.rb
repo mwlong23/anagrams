@@ -11,21 +11,27 @@ class EvaluateWord
 
 
 
-  # def word?
-  #   puts  first_phrase_array = first_word.downcase.split(' ')
-  #   puts  second_phrase_array = second_word.downcase.split(' ')
-  #
-  #   for i in 1..second_phrase_array.length do
-  #    if  second_phrase_array[(i-1)] !~ /[aeiouy]/
-  #      puts "word"
-  #    else
-  #      puts second_phrase_array[(i-1)], "is not a word"
-  #     end
-  #   end
-  # end
+  def word?
+    combined_inputs = @first_phrase_array +  @second_phrase_array
+    input_is_not_word=[]
+
+    for i in 1..combined_inputs.length do
+     if  combined_inputs[(i-1)] !~ /[aeiouy]/
+       input_is_not_word.push(1)
+     else
+       input_is_not_word.push(0)
+      end
+    end
+
+
+    if input_is_not_word.reduce(:+) > 0
+      false
+    else
+      true
+    end
+  end
 
   def anagram?
-
     first_phrase_key = @first_phrase.gsub(/\s+/, "").split('').sort.join('')
     second_phrase_key = @second_phrase.gsub(/\s+/, "").split('').sort.join('')
     if first_phrase_key == second_phrase_key
@@ -34,8 +40,6 @@ class EvaluateWord
       else
         "These words or phrases are anagrams of eachother but don't form a palindrome."
       end
-    # elsif
-
     else
        "This word or phrase is neither a word or palindrome."
     end
@@ -50,6 +54,7 @@ end
 #   second_entry = gets.chomp
 #
 #   word_entries = EvaluateWord.new(first_entry,second_entry)
+#   puts puts word_entries.word?()
 #   puts word_entries.anagram?
 #   puts "Press 'y' if you would like to play again, 'n' to quit"
 #   repeat = gets.chomp

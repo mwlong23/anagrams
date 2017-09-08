@@ -16,10 +16,10 @@ describe('#Anagram_checker')  do
    expect(compare_words.anagram?()).to(eq("These words or phrases are anagrams of eachother and form a palindrome."))
 
  end
- # it("checks to make sure that each word contains a vowel") do
- # compare_words EvaluateWord.new("Tarawa", "A war at")
- # expect(compare_words.anagram?()).to(eq("One or more of your entries contained text that are not words"))
- # end
+ it("checks to make sure every inputted word has at least one vowell") do
+ compare_words = EvaluateWord.new("Tarawa", "A war at")
+ expect(compare_words.word?()).to(eq(true))
+ end
 
 
 end
